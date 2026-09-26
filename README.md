@@ -8,7 +8,7 @@ Aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3. Per
 - Geocodificação Reversa: Clique em qualquer ponto do mapa para obter o endereço correspondente.
 - Geolocalização: Botão para capturar a posição atual do utilizador.
 - Cálculo de Distância Exata: Fórmula matemática de Haversine para calcular a distância em km entre o utilizador e o endereço pesquisado.
-- Histórico Local: Guarda as últimas 5 pesquisas no `localStorage`.
+- Histórico Local: Guarda as últimas 5 pesquisas no localStorage.
 - Cópia Rápida: Botão dedicado para copiar todos os dados formatados para a área de transferência.
 
 ## Estrutura do Projeto
