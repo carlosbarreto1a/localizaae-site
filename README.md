@@ -3,7 +3,7 @@
 Aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3. Permite consultar localizações por CEP ou endereço textual, exibindo detalhes completos do endereço e a sua posição exata no mapa.
 
 ##  Funcionalidades
-- Busca por CEP:** Integração com a API pública ViaCEP para autocompletar Logradouro, Bairro, Cidade, UF, DDD, Código IBGE e SIAFI.
+- Busca por CEP: Integração com a API pública ViaCEP para autocompletar Logradouro, Bairro, Cidade, UF, DDD, Código IBGE e SIAFI.
 - Busca por Endereço Livre: Suporte a nomes de ruas, avenidas ou pontos turísticos.
 - Geocodificação Reversa: Clique em qualquer ponto do mapa para obter o endereço correspondente.
 - Geolocalização: Botão para capturar a posição atual do utilizador.
