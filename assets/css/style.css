@@ -1,0 +1,365 @@
+:root {
+    --bg-main: #f4f6f9;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+    --primary: #1a73e8;
+    --primary-hover: #1557b0;
+    --secondary: #4a5568;
+    --secondary-hover: #2d3748;
+    --text-primary: #1a202c;
+    --text-muted: #718096;
+    --danger: #e53e3e;
+    --success: #38a169;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    position: relative;
+}
+
+/* Painel Lateral */
+.sidebar {
+    width: 400px;
+    height: 100%;
+    background-color: var(--bg-card);
+    border-right: 1px solid var(--border-color);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+}
+
+.sidebar-header .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--primary);
+}
+
+.sidebar-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sidebar-header .subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+/* Pesquisa */
+.search-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    color: var(--text-muted);
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 38px 12px 40px;
+    font-size: 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-container input:focus {
+    border-color: var(--primary);
+}
+
+.btn-clear {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    flex: 1;
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: #ffffff;
+    width: 48px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+/* Alertas */
+.alert {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.alert.error {
+    background-color: #fff5f5;
+    border: 1px solid #feb2b2;
+    color: var(--danger);
+}
+
+.alert.info {
+    background-color: #ebf8ff;
+    border: 1px solid #90cdf4;
+    color: var(--primary);
+}
+
+/* Cartão de Resultados */
+.result-card {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-header h2 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.btn-icon:hover {
+    color: var(--primary);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-group.span-2 {
+    grid-column: span 2;
+}
+
+.info-group .label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.info-group .value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-top: 2px;
+    word-break: break-word;
+}
+
+.info-group .value.highlight {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Histórico */
+.history-section {
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.history-header h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn-text:hover {
+    color: var(--danger);
+}
+
+.history-list {
+    list-style: none;
+    max-height: 120px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.history-item {
+    padding: 8px 10px;
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.history-item:hover {
+    background-color: #edf2f7;
+}
+
+.empty-history {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Rodapé Global da Página */
+.site-footer {
+    position: absolute;
+    bottom: 12px;
+    left: 412px;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--border-color);
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.site-footer strong {
+    color: var(--text-primary);
+}
+
+/* Conteúdo do Mapa */
+.map-container {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Utilitários */
+.hidden {
+    display: none !important;
+}
+
+/* Responsividade para Telemóveis */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column-reverse;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 55vh;
+        border-right: none;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .map-container {
+        height: 45vh;
+    }
+
+    .site-footer {
+        left: 10px;
+        bottom: 10px;
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+}

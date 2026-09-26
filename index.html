@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localizador de CEP e Endereço</title>
+    
+    <!-- Leaflet CSS (Mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- FontAwesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Painel Lateral de Controlo -->
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <div class="brand">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h1>LocalizaaeCEP</h1>
+            </div>
+            <p class="subtitle">Pesquisa direta por CEP ou endereço com coordenadas geográficas e localização no mapa em tempo real.</p>
+        </header>
+
+        <!-- Formulário de Pesquisa -->
+        <section class="search-section">
+            <div class="input-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Ex: 01001-000 ou Avenida Paulista, 1000, São Paulo, SP" autocomplete="off" maxlength="300">
+                <button type="button" id="btn-clear" class="btn-clear hidden" title="Limpar campo">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="button-group">
+                <button id="btn-search" class="btn btn-primary">
+                    <i class="fa-solid fa-search"></i> Buscar
+                </button>
+                <button id="btn-user-location" class="btn btn-secondary" title="Minha Localização">
+                    <i class="fa-solid fa-crosshairs"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Alertas de Estado -->
+        <div id="status-alert" class="alert hidden"></div>
+
+        <!-- Painel de Resultados do Endereço -->
+        <section id="result-card" class="result-card hidden">
+            <div class="card-header">
+                <h2>Detalhes do Endereço</h2>
+                <button id="btn-copy" class="btn-icon" title="Copiar Informações">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
+
+            <div class="card-grid">
+                <div class="info-group span-2">
+                    <span class="label">Logradouro</span>
+                    <span id="res-street" class="value">-</span>
+                </div>
+                <div class="info-group">
+                    <span class="label">Bairro</span>
+                    <span id="res-neighborhood" class="value">-</span>
+                </div>
+                <div class="info-group">
+                    <span class="label">CEP</span>
+                    <span id="res-cep" class="value">-</span>
+                </div>
+                <div class="info-group">
+                    <span class="label">Cidade / UF</span>
+                    <span id="res-city" class="value">-</span>
+                </div>
+                <div class="info-group">
+                    <span class="label">DDD</span>
+                    <span id="res-ddd" class="value">-</span>
+                </div>
+                <div class="info-group">
+                    <span class="label">Código IBGE</span>
+                    <span id="res-ibge" class="value">-</span>
+                </div>
+                <div class="info-group">
+                    <span class="label">SIAFI</span>
+                    <span id="res-siafi" class="value">-</span>
+                </div>
+                <div class="info-group span-2">
+                    <span class="label">Coordenadas (Lat, Lon)</span>
+                    <span id="res-coords" class="value">-</span>
+                </div>
+                <div id="distance-box" class="info-group span-2 hidden">
+                    <span class="label">Distância da sua posição</span>
+                    <span id="res-distance" class="value highlight">-</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Histórico de Pesquisas Recentes -->
+        <section class="history-section">
+            <div class="history-header">
+                <h3>Recentes</h3>
+                <button id="btn-clear-history" class="btn-text">Limpar</button>
+            </div>
+            <ul id="history-list" class="history-list">
+                <li class="empty-history">Nenhum histórico recente.</li>
+            </ul>
+        </section>
+    </aside>
+
+    <!-- Área do Mapa -->
+    <main class="map-container">
+        <div id="map"></div>
+    </main>
+
+    <!-- Rodapé Global Flutuante da Página -->
+    <footer class="site-footer">
+        <p>&copy; 2026 LocalizaCEP. Criado por <strong>Carlos Barreto</strong>. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Script Principal -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
